@@ -1,0 +1,114 @@
+   body {
+  background-color: #fde0e5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Dancing Script', cursive;
+  margin: 0;
+}
+
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background: #f5a3a2;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  perspective: 1000px;
+}
+
+.flap {
+  position: absolute;
+  top: 0xp;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-bottom: 100px solid #f5a3a2;
+  transform-origin: top center;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  z-index: 1;
+}
+
+.flap.open {
+  transform: rotateX(-160deg);
+}
+
+.side-left,
+.side-right {
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-top: 150px solid transparent;
+}
+
+.side-left {
+  left: 0;
+  border-right: 150px solid #f58c8c;
+}
+
+.side-right {
+  right: 0;
+  border-left: 150px solid #f58c8c;
+}
+
+.bottom-triangle {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 150px solid transparent;
+  border-right: 150px solid transparent;
+  border-top: 100px solid #ef6b69;
+   backface-visibility: hidden;
+  z-index: 1;
+}
+
+.letter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 260px;
+  height: 160px;
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.6s ease;
+  z-index: 1;
+}
+
+.letter.show {
+  transform: translate(-50%, -60%);
+}
+
+.buttons {
+  margin-top: 20px;
+}
+
+button {
+  margin: 0 10px;
+  padding: 10px 20px;
+  border: 2px solid #f06292;
+  background-color: white;
+  color: #f06292;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Dancing Script', cursive;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #f06292;
+  color: white;
+}

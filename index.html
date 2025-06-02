@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Valentine Envelope</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="envelope">
+    <div class="flap" id="flap"></div>
+    
+    <div class="side-left"></div>
+    <div class="side-right"></div>
+    <div class="bottom-triangle"></div>
+    <div class="letter" id="letter">
+      <p><strong>To: Crush</strong></p>
+      <p> My Dear , you are so beautiful.<br>
+      That every time I see you,<br>
+      my world stops.</p>
+    </div>
+  </div>
+
+  <div class="buttons">
+    <button onclick="openEnvelope()">OPEN</button>
+    <button onclick="closeEnvelope()">CLOSE</button>
+  </div>
+
+  <script>
+    function openEnvelope() {
+      document.getElementById('flap').classList.add('open');
+      document.getElementById('letter').classList.add('show');
+    }
+
+    function closeEnvelope() {
+      document.getElementById('flap').classList.remove('open');
+      document.getElementById('letter').classList.remove('show');
+    }
+  </script>
+</body>
+</html>
